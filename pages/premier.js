@@ -1,13 +1,14 @@
 import styles from '../styles/League.module.css';
 
-function Premier({ leagueTable, positions }) {
+function Premier({ pl }) {
+  const positions = pl.table.response[0].league.standings[0];
   return (
     <div className={styles.container}>
       <main>
         <table className={styles.leagueTable}>
           <thead>
             <tr>
-              <th colspan="3" className={styles.tableTitle}>Premier League</th>
+              <th colSpan="3" className={styles.tableTitle}>Premier League</th>
             </tr>
             <tr>
               <th className={styles.tableHeadings}>Pos</th>
@@ -33,13 +34,10 @@ function Premier({ leagueTable, positions }) {
 export async function getStaticProps() {
   const res = await fetch('http://leaguetable.playfair.dev/pl');
   const leagueTable = await res.json();
-  const positions = leagueTable.table.response[0].league.standings[0];
-
   // Return props
   return {
     props: {
-      leagueTable,
-      positions,
+      pl: leagueTable,
     },
   };
 }
