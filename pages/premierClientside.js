@@ -9,7 +9,7 @@ const fetcher = (url) =>
   });
 
 function getLeagueTable() {
-  const { data, error } = useSWR('http://localhost:3001/pl', fetcher);
+  const { data, error } = useSWR(process.env.NEXT_PUBLIC_PL, fetcher);
 
   return {
     leagueTable: data,
