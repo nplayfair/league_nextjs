@@ -8,7 +8,7 @@ const fetcher = (url) =>
   });
 
 function getLeagueTable() {
-  const { data, error } = useSWR('http://localhost:3001/pl', fetcher);
+  const { data, error } = useSWR('http://localhost:3001/championship', fetcher);
 
   return {
     leagueTable: data,
@@ -17,7 +17,7 @@ function getLeagueTable() {
   };
 }
 
-function Premier() {
+function Championship() {
   const { leagueTable, isLoading, isError } = getLeagueTable();
   if (isLoading) return <div>loading...</div>;
   if (isError) return <div>Error</div>;
@@ -55,4 +55,4 @@ function Premier() {
   );
 }
 
-export default Premier;
+export default Championship;
