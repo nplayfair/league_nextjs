@@ -1,5 +1,6 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import styles from '../styles/Home.module.css';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -10,23 +11,24 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <h1 className={styles.title}>Football League Tables</h1>
+        <div className={styles.grid}>
+          <Link href="/premierClientside">
+            <a className={styles.card}>
+              <h3>Premier League Table</h3>
+            </a>
+          </Link>
 
-        <h2>Premier League Table</h2>
+          <Link href="/champ">
+            <a className={styles.card}>
+              <h3>Championship Table</h3>
+            </a>
+          </Link>
+
+        </div>
       </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+      <footer className={styles.footer}>Copyright &copy; nplayfair 2021</footer>
     </div>
-  )
+  );
 }

@@ -1,4 +1,5 @@
 import styles from '../styles/League.module.css';
+import Link from 'next/link';
 
 function Premier({ pl }) {
   const positions = pl.table.response[0].league.standings[0];
@@ -26,6 +27,7 @@ function Premier({ pl }) {
             ))}
           </tbody>
         </table>
+        <Link href="/"><a>Home</a></Link>
       </main>
     </div>
   );

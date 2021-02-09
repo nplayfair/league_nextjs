@@ -1,6 +1,7 @@
 import styles from '../styles/League.module.css';
 import axios from 'axios';
 import useSWR from 'swr';
+import Link from 'next/link';
 
 const fetcher = (url) =>
   axios.get(url).then((res) => {
@@ -30,7 +31,7 @@ function Premier() {
         <table className={styles.leagueTable}>
           <thead>
             <tr>
-              <th colspan="3" className={styles.tableTitle}>
+              <th colSpan="3" className={styles.tableTitle}>
                 {leagueTable.table.response[0].league.name}
               </th>
             </tr>
@@ -42,7 +43,7 @@ function Premier() {
           </thead>
           <tbody>
             {positions.map((position) => (
-              <tr>
+              <tr key={position.team.id}>
                 <td className={styles.pos}>{position.rank}</td>
                 <td>{position.team.name}</td>
                 <td className={styles.pts}>{position.points}</td>
@@ -50,6 +51,7 @@ function Premier() {
             ))}
           </tbody>
         </table>
+        <Link href="/"><a>Home</a></Link>
       </main>
     </div>
   );
