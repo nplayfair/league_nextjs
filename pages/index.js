@@ -13,7 +13,7 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className={styles.title}>Football League Tables</h1>
         <div className={styles.grid}>
-          <Link href="/premierClientside">
+          <Link href="/premier">
             <a className={styles.card}>
               <h3>Premier League Table</h3>
             </a>

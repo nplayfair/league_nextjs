@@ -51,7 +51,7 @@ function Championship() {
             ))}
           </tbody>
         </table>
-        <Link href="/"><a>Home</a></Link>
+        <p><Link href="/"><a>Home</a></Link></p>
       </main>
     </div>
   );
